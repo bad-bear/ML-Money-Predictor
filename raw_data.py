@@ -13,16 +13,19 @@ class raw_data:
         pass
 
     def fileCheck(self):
-        if path.isdir("data-archvie"):
+        #Check for data folder that holds values
+        if (path.isdir("data-archvie")):
             pass
         else:
             mkdir("data-archive")
         
-        if isfile("data-archive/stocklist.txt"):
+        #Check if list of stocks to be analyzed is in folder
+        if (isfile("data-archive/stocklist.txt")):
             pass
         else:
-            APIRequest(self, 0)
+            self.APIRequest(0)
 
+        #Check if API request are in database
         pass
 
     def fileCreate(self):
@@ -31,7 +34,11 @@ class raw_data:
     def APICreate(self):
         pass
 
-    def APIRequest(self):
+    def APIRequest(self, request):
+        #Pulls list of stocks and sends the json back to check function
+        if (request == 0):
+            reqStr = self.APICreate(0)
+            
         pass
     
     def setDataUse(self):
